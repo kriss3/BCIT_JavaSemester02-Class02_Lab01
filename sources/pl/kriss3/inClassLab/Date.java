@@ -67,7 +67,7 @@ public class Date
 		return day;
 	}
 	
-	private boolean isLearpYear(int year)
+	public boolean isLearpYear(int year)
 	{
 		boolean result = false;
 		
