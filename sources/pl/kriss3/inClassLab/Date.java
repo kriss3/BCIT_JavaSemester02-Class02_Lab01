@@ -60,19 +60,51 @@ public class Date
 		
 		int monthValue = MonthMap.valueOf(val).getNumericValue();
 		
-		int step5 = (step1 + step2 + step3 + day + monthValue) % 7;
+		//Step 5 value need to be decide based on isLeapYear and century we are calculating a day
+		int step5 = evaluate(isLeapYear, month, year);
 		
-		String day = DayMap.values()[step5].toString();
+		int step6 = ((step1 + step2 + step3 + day + monthValue) + step5 ) % 7;
+		
+		String day = DayMap.values()[step6].toString();
 		
 		return day;
 	}
 	
-	public boolean isLearpYear(int year)
+	boolean isLearpYear(int year)
 	{
 		boolean result = false;
 		
 		if ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0))
 			result = true;
+		
+		return result;
+	}
+	
+	int evaluate(boolean isLeapYear, int month, int currentYear)
+	{
+		int result = 0;
+		if(isLeapYear && (month == 1 || month == 2))
+		{
+			result = -1;
+			return result;
+		}
+		
+		int century = Integer.parseInt(("" + year).substring(0, 2));
+		
+		switch(century)
+		{
+		case 16:
+		case 20:
+			result = 6;
+			break;
+		case 17:
+		case 21:
+			result = 4;
+			break;
+		case 18:
+			result = 2;
+			break;
+		}
 		
 		return result;
 	}

@@ -1,9 +1,7 @@
-package pl.kriss3.atHomeLab;
+package pl.kriss3.inClassLab;
 
 import static org.junit.Assert.*;
-
 import org.junit.Test;
-
 import pl.kriss3.inClassLab.Date;
 
 public class TestDateClass {
@@ -15,5 +13,4 @@ public class TestDateClass {
 		boolean result = d.isLearpYear(year);
 		assertTrue(result);		
 	}
-
 }
