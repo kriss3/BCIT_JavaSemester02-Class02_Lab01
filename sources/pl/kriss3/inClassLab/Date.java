@@ -2,12 +2,24 @@ package pl.kriss3.inClassLab;
 
 import java.time.Month;
 
+/**
+ * Class Date to represent custom Date objects;
+ * @author krzysztof szczurowski
+ * @see https://github.com/kriss3/BCIT_JavaSemester02-Class02_Lab01.git
+ * @since 2017-01-31
+ */
 public class Date 
 {
 	private int day;
 	private int month;
 	private int year;
 	
+	/**
+	 * Ctor for Date class
+	 * @param day as Int
+	 * @param month month as Int
+	 * @param year as Int
+	 */
 	public Date(int day, int month, int year) 
 	{
 		setDay(day);
@@ -15,6 +27,7 @@ public class Date
 		setYear(year);
 	}
 
+	// Properties
 	public int getDay() 
 	{
 		return day;
