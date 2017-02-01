@@ -35,11 +35,13 @@ public class Date
 		this.month = month;
 	}
 	
-	public int getYear() {
+	public int getYear() 
+	{
 		return year;
 	}
 	
-	public void setYear(int year) {
+	public void setYear(int year) 
+	{
 		this.year = year;
 	}
 	
@@ -70,6 +72,7 @@ public class Date
 		return day;
 	}
 	
+	//package accessibility
 	boolean isLearpYear(int year)
 	{
 		boolean result = false;
@@ -107,5 +110,17 @@ public class Date
 		}
 		
 		return result;
+	}
+
+	//03-11-1996 - 3 of November 1996
+	public String toString()
+	{
+		return String.format("%4d-%02d-%02d", year, month, day);
+	}
+	
+	//November 3, 1996
+	public String toLongString()
+	{
+		return String.format("%s %02d, %4d",Month.of(month), day, year);
 	}
 }
